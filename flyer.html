@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer A5 - Pouria Forouzesh - Services de Proximité</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Print/Screen Optimization */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* A5 Page Container for screen preview */
+        .flyer-page {
+            background-color: #ffffff;
+            width: 148mm;
+            height: 210mm;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            padding: 12mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* Decorative Background Elements */
+        .flyer-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5mm;
+            background: linear-gradient(90deg, #4f46e5 0%, #d97706 100%);
+        }
+
+        /* Typography & Header */
+        .header {
+            text-align: center;
+            margin-top: 2mm;
+            margin-bottom: 3mm;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(79, 70, 229, 0.08);
+            color: #4f46e5;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 2mm;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 1mm;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Profile & Intro Block */
+        .intro-block {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 3mm;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 3mm;
+        }
+
+        .profile-img {
+            width: 14mm;
+            height: 14mm;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #4f46e5;
+            flex-shrink: 0;
+        }
+
+        .intro-text {
+            font-size: 9.5px;
+            line-height: 1.4;
+            color: #334155;
+        }
+
+        .intro-text strong {
+            color: #0f172a;
+        }
+
+        /* Services Section */
+        .services-section {
+            flex-grow: 1;
+            margin-bottom: 3mm;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4f46e5;
+            margin-bottom: 2mm;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1mm;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2mm;
+        }
+
+        .service-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 2.5mm;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s;
+        }
+
+        .service-item:hover {
+            border-color: #4f46e5;
+        }
+
+        .service-icon {
+            font-size: 14px;
+            margin-bottom: 1mm;
+        }
+
+        .service-name {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5mm;
+        }
+
+        .service-details {
+            font-size: 8.5px;
+            color: #64748b;
+            line-height: 1.3;
+        }
+
+        /* Special highlight for IT & CAD */
+        .service-item.highlight-tech {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03) 0%, rgba(217, 119, 6, 0.03) 100%);
+            border: 1px dashed #4f46e5;
+        }
+
+        /* CESU & Tax Benefit Banner */
+        .tax-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 3mm;
+            text-align: center;
+            margin-bottom: 3.5mm;
+            position: relative;
+        }
+
+        .tax-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #f59e0b;
+            margin-bottom: 0.5mm;
+        }
+
+        .tax-desc {
+            font-size: 9px;
+            color: #e2e8f0;
+            line-height: 1.3;
+        }
+
+        /* Call To Action & QR Code Section */
+        .cta-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4mm;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 3mm;
+            margin-bottom: 1mm;
+        }
+
+        .cta-info {
+            flex-grow: 1;
+        }
+
+        .cta-text {
+            font-size: 10px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1.5mm;
+            line-height: 1.3;
+        }
+
+        .phone-number {
+            font-size: 15px;
+            font-weight: 800;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .phone-icon {
+            font-size: 14px;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 1.5mm;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            flex-shrink: 0;
+        }
+
+        .qr-image {
+            width: 20mm;
+            height: 20mm;
+            object-fit: contain;
+        }
+
+        .qr-caption {
+            font-size: 7.5px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 1mm;
+            text-transform: uppercase;
+        }
+
+        /* Footer info */
+        .footer-info {
+            text-align: center;
+            font-size: 8px;
+            color: #94a3b8;
+            margin-top: 1mm;
+        }
+
+        /* PRINT STYLES - Triggers automatically during print action */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .flyer-page {
+                box-shadow: none;
+                width: 148mm;
+                height: 210mm;
+                padding: 10mm;
+                margin: 0;
+                page-break-inside: avoid;
+            }
+            /* Hide print button in printout */
+            .print-btn {
+                display: none !important;
+            }
+        }
+
+        /* Preview page button */
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4f46e5;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Print Button for user convenience -->
+    <button class="print-btn" onclick="window.print()">
+        <span>🖨️ Imprimer le Flyer (A5)</span>
+    </button>
+
+    <div class="flyer-page">
+        <!-- Header -->
+        <div class="header">
+            <span class="badge">📍 Arpajon & Alentours</span>
+            <h1 class="main-title">Ingénieur & Services de Proximité</h1>
+            <p class="subtitle">La rigueur et la précision pour simplifier votre quotidien</p>
+        </div>
+
+        <!-- Intro -->
+        <div class="intro-block">
+            <img class="profile-img" src="assets/pouria.png" alt="Pouria Forouzesh">
+            <div class="intro-text">
+                Bonjour ! Je m'appelle <strong>Pouria FOROUZESH</strong>. Ingénieur et habitant local, je propose mes services de proximité aux particuliers et professionnels de la région d'Arpajon. Ponctualité, rigueur et professionnalisme garantis.
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section">
+            <h2 class="section-title">Mes Services Proposés</h2>
+            <div class="services-grid">
+                
+                <!-- IT & CAD -->
+                <div class="service-item highlight-tech">
+                    <span class="service-icon">💻</span>
+                    <span class="service-name">Informatique, CAO & Data (Expert)</span>
+                    <span class="service-details">Dépannage PC/Box, cours de modélisation 3D (CATIA), Data Science, Machine Learning, création web et automatisation de processus (n8n/Make).</span>
+                </div>
+
+                <!-- DIY -->
+                <div class="service-item">
+                    <span class="service-icon">🔧</span>
+                    <span class="service-name">Petit Bricolage</span>
+                    <span class="service-details">Montage de meubles en kit, pose de tringles à rideaux, cadres, supports TV muraux, luminaires, et petites réparations.</span>
+                </div>
+
+                <!-- Cleaning -->
+                <div class="service-item">
+                    <span class="service-icon">🧽</span>
+                    <span class="service-name">Entretien & Ménage</span>
+                    <span class="service-details">Ménage régulier ou ponctuel de vos pièces de vie, soin du linge, repassage à domicile et nettoyage de vitres.</span>
+                </div>
+
+                <!-- Garden -->
+                <div class="service-item">
+                    <span class="service-icon">🏡</span>
+                    <span class="service-name">Jardin & Extérieurs</span>
+                    <span class="service-details">Tonte de pelouse, taille de haies et arbustes simples, ramassage des feuilles, nettoyage de terrasses et allées.</span>
+                </div>
+
+                <!-- Assistance -->
+                <div class="service-item">
+                    <span class="service-icon">👥</span>
+                    <span class="service-name">Aide & Vigilance</span>
+                    <span class="service-details">Courses et livraison, soutien scolaire (Maths/Sciences), garde d'animaux (Pet-sitting), et arrosage durant vos absences.</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CESU Banner -->
+        <div class="tax-banner">
+            <h3 class="tax-title">🛡️ 50% de crédit d'impôt immédiat !</h3>
+            <p class="tax-desc">Mes prestations sont déclarées sous le régime officiel <strong>CESU (Urssaf)</strong>. Vous divisez légalement toutes vos factures par deux, en toute simplicité et en toute légalité.</p>
+        </div>
+
+        <!-- Call To Action & QR -->
+        <div class="cta-section">
+            <div class="cta-info">
+                <p class="cta-text">Appelez-moi directement pour toute question, ou scannez le QR code ci-contre pour visiter mon site et découvrir le détail de tous mes services !</p>
+                <div class="phone-number">
+                    <span class="phone-icon">📞</span>
+                    <span>06 60 68 14 00</span>
+                </div>
+            </div>
+            
+            <div class="qr-container">
+                <img class="qr-image" src="assets/qr_website.png" alt="QR Code Website">
+                <span class="qr-caption">Visiter le site</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-info">
+            Pouria FOROUZESH - SIRET en cours / Activité sous régime CESU Urssaf.
+        </div>
+    </div>
+
+</body>
+</html>
