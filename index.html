@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pouria Forouzesh - Services de Proximité & Accompagnement Technique</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Ingénieur en mécanique et Data Scientist proposant des services de proximité : bricolage, assistance informatique, ménage, jardinage et cours CATIA à Arpajon et alentours. 50% de crédit d'impôt (CESU).">
+    <meta name="keywords" content="Services à la personne, Bricolage, Informatique, CATIA, Arpajon, Saint-Germain-lès-Arpajon, CESU, Pouria Forouzesh">
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Audio Element (Soft Serene Ambient Track) -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        <!-- Local fallback path so user can place their own mp3 -->
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">Pouria</span> Forouzesh
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#about" class="lang-fr">Qui suis-je ?</a>
+                <a href="#about" class="lang-en">About Me</a>
+                
+                <a href="#services" class="lang-fr">Services</a>
+                <a href="#services" class="lang-en">Services</a>
+                
+                <a href="#cesu" class="lang-fr">Avantages CESU</a>
+                <a href="#cesu" class="lang-en">CESU Benefits</a>
+                
+                <a href="#area" class="lang-fr">Zone d'intervention</a>
+                <a href="#area" class="lang-en">Service Area</a>
+                
+                <a href="#contact" class="btn btn-sm btn-nav lang-fr">Me Contacter</a>
+                <a href="#contact" class="btn btn-sm btn-nav lang-en">Contact Me</a>
+            </nav>
+            
+            <div class="header-controls">
+                <!-- Music Player Toggle Button -->
+                <button id="music-toggle" class="music-btn" aria-label="Toggle music" onclick="toggleMusic()">
+                    <!-- Muted Icon -->
+                    <svg class="music-muted-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                    <!-- Playing Icon -->
+                    <svg class="music-playing-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                </button>
+
+                <!-- Theme Switcher Button -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" onclick="toggleTheme()">
+                    <!-- Sun icon for light mode (shown in dark mode) -->
+                    <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
+                    <!-- Moon icon for dark mode (shown in light mode) -->
+                    <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button id="lang-fr-btn" class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+                    <button id="lang-en-btn" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+                </div>
+                
+                <!-- Mobile Menu Toggle Button -->
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav">
+        <a href="#about" class="lang-fr" onclick="toggleMobileMenu()">Qui suis-je ?</a>
+        <a href="#about" class="lang-en" onclick="toggleMobileMenu()">About Me</a>
+        
+        <a href="#services" class="lang-fr" onclick="toggleMobileMenu()">Services</a>
+        <a href="#services" class="lang-en" onclick="toggleMobileMenu()">Services</a>
+        
+        <a href="#cesu" class="lang-fr" onclick="toggleMobileMenu()">Avantages CESU</a>
+        <a href="#cesu" class="lang-en" onclick="toggleMobileMenu()">CESU Benefits</a>
+        
+        <a href="#area" class="lang-fr" onclick="toggleMobileMenu()">Zone d'intervention</a>
+        <a href="#area" class="lang-en" onclick="toggleMobileMenu()">Service Area</a>
+        
+        <a href="#contact" class="btn lang-fr" onclick="toggleMobileMenu()">Me Contacter</a>
+        <a href="#contact" class="btn lang-en" onclick="toggleMobileMenu()">Contact Me</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg" style="background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 100%), url('assets/hero.png');"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="lang-fr">📍 Arpajon, Saint-Germain-lès-Arpajon et Alentours</span>
+                    <span class="lang-en">📍 Arpajon, Saint-Germain-lès-Arpajon and Surroundings</span>
+                </div>
+                
+                <h1 class="hero-title lang-fr">Vos Services de Proximité & Accompagnement Technique</h1>
+                <h1 class="hero-title lang-en">Your Local Services & Technical Support</h1>
+                
+                <p class="hero-subtitle lang-fr">La rigueur et la précision d'un profil ingénieur pour simplifier votre quotidien.</p>
+                <p class="hero-subtitle lang-en">The rigor and precision of an engineering profile to simplify your daily life.</p>
+                
+                <p class="hero-text lang-fr">Bonjour et bienvenue ! Je m'appelle Pouria FOROUZESH. Ingénieur en mécanique et consultant en Data Science, je mets temporairement mes compétences techniques et mon sens de l'organisation au service des particuliers de ma région.</p>
+                <p class="hero-text lang-en">Hello and welcome! My name is Pouria FOROUZESH. As a mechanical engineer and Data Science consultant, I am temporarily offering my technical skills and organizational sense to support residents in my local area.</p>
+                
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary lang-fr">Découvrir mes Services</a>
+                    <a href="#services" class="btn btn-primary lang-en">Discover my Services</a>
+                    
+                    <a href="#contact" class="btn btn-outline lang-fr">Me Contacter</a>
+                    <a href="#contact" class="btn btn-outline lang-en">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 32L60 42.7C120 53 240 75 360 74.7C480 75 600 53 720 42.7C840 32 960 32 1080 42.7C1200 53 1320 75 1380 85.3L1440 96V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V32Z" fill="var(--bg-color)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section (Qui suis-je ?) -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="about-visual">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card">
+                        <div class="about-avatar-img">
+                            <img class="profile-photo" src="assets/pouria.png" alt="Pouria Forouzesh">
+                        </div>
+                        <div class="about-credentials">
+                            <h3>Pouria FOROUZESH</h3>
+                            <p class="lang-fr">Ingénieur & Consultant Data Science</p>
+                            <p class="lang-en">Mechanical Engineer & Data Scientist</p>
+                            <div class="credentials-badge">CESU Agréé</div>
+                        </div>
+                        <div class="credentials-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎓</span>
+                                <span class="lang-fr">Bac +5 Ingénieur</span>
+                                <span class="lang-en">Master of Engineering</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🔒</span>
+                                <span class="lang-fr">Assuré & Déclaré CESU</span>
+                                <span class="lang-en">Insured & Declared CESU</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">⭐</span>
+                                <span class="lang-fr">Rigueur, Précision, Confiance</span>
+                                <span class="lang-en">Rigor, Precision, Trust</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="section-badge lang-fr">Qui suis-je ?</div>
+                    <div class="section-badge lang-en">Who am I?</div>
+                    
+                    <h2 class="section-title lang-fr">Pourquoi ce projet local ?</h2>
+                    <h2 class="section-title lang-en">Why this local project?</h2>
+                    
+                    <p class="section-text lang-fr">Parallèlement à ces services, je développe actuellement mes propres projets de start-up, spécialisés dans <strong>l'automatisation des processus professionnels</strong> via des outils avancés comme <strong>n8n</strong>.</p>
+                    <p class="section-text lang-en">In parallel with these services, I am currently developing my own startup projects, specializing in <strong>business process automation</strong> using advanced tools like <strong>n8n</strong>.</p>
+                    
+                    <p class="section-text lang-fr">Afin de financer le lancement de mon entreprise tout en conservant la flexibilité nécessaire à sa création, j'ai choisi de proposer mes services aux particuliers de ma région. C'est l'opportunité pour vous de déléguer des tâches quotidiennes en toute tranquillité, avec la garantie d'un travail soigné.</p>
+                    <p class="section-text lang-en">In order to finance the launch of my company while maintaining the flexibility required for its creation, I have chosen to offer my services to residents in my region. This is a great opportunity for you to delegate daily chores with peace of mind, knowing they are in expert hands.</p>
+                    
+                    <div class="highlight-box">
+                        <p class="lang-fr">💡 <strong>Un profil de confiance :</strong> En me faisant confiance, vous bénéficiez de la rigueur, de la ponctualité et de la précision d'un profil ingénieur pour simplifier votre quotidien.</p>
+                        <p class="lang-en">💡 <strong>A trustworthy profile:</strong> By placing your trust in me, you benefit from the rigor, punctuality, and precision of an engineering profile to simplify your daily life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Process Section -->
+    <section class="section timeline-section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge lang-fr">Fonctionnement</div>
+                <div class="section-badge lang-en">How it works</div>
+                
+                <h2 class="section-title lang-fr">Comment ça marche ?</h2>
+                <h2 class="section-title lang-en">Simple 4-Step Process</h2>
+                
+                <p class="section-subtitle lang-fr">Une collaboration transparente et simple du début à la fin.</p>
+                <p class="section-subtitle lang-en">A transparent and straightforward process from start to finish.</p>
+            </div>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-progress"></div>
+                <div class="timeline-steps">
+                    <!-- Step 1 -->
+                    <div class="timeline-step">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title lang-fr">Premier contact</h4>
+                        <h4 class="step-title lang-en">First Contact</h4>
+                        <p class="step-desc lang-fr">Expliquez-moi votre besoin en m'appelant directement ou via le bouton WhatsApp.</p>
+                        <p class="step-desc lang-en">Explain your needs by calling me directly or using the WhatsApp form below.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title lang-fr">Estimation & Date</h4>
+                        <h4 class="step-title lang-en">Estimation & Date</h4>
+                        <p class="step-desc lang-fr">Nous évaluons ensemble le travail à effectuer et planifions une date d'intervention.</p>
+                        <p class="step-desc lang-en">We evaluate the work together and schedule a flexible date at your convenience.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title lang-fr">Intervention soignée</h4>
+                        <h4 class="step-title lang-en">Meticulous Work</h4>
+                        <p class="step-desc lang-fr">Je réalise la tâche avec rigueur, ponctualité et grand soin.</p>
+                        <p class="step-desc lang-en">I execute the task with standard engineering precision and great care.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title lang-fr">Paiement CESU</h4>
+                        <h4 class="step-title lang-en">CESU Payment</h4>
+                        <p class="step-desc lang-fr">Déclaration en ligne simple et rapide pour bénéficier de 50% de crédit d'impôt immédiat.</p>
+                        <p class="step-desc lang-en">Simple online registration to benefit from an immediate 50% tax credit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge lang-fr">Mes Prestations</div>
+                <div class="section-badge lang-en">My Services</div>
+                
+                <h2 class="section-title lang-fr">Comment puis-je vous aider ?</h2>
+                <h2 class="section-title lang-en">How can I help you?</h2>
+                
+                <p class="section-subtitle lang-fr">Cliquez sur une catégorie pour filtrer les services.</p>
+                <p class="section-subtitle lang-en">Click on a category to filter the services.</p>
+            </div>
+            
+            <!-- Category Filter Controls -->
+            <div class="services-filter">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="lang-fr">Tous</span><span class="lang-en">All</span>
+                </button>
+                <button class="filter-btn" data-filter="tech">
+                    <span class="lang-fr">💻 Informatique & 3D</span><span class="lang-en">💻 IT & 3D Design</span>
+                </button>
+                <button class="filter-btn" data-filter="diy">
+                    <span class="lang-fr">🔧 Petit Bricolage</span><span class="lang-en">🔧 DIY & Fitting</span>
+                </button>
+                <button class="filter-btn" data-filter="cleaning">
+                    <span class="lang-fr">🧽 Entretien Maison</span><span class="lang-en">🧽 Cleaning & Care</span>
+                </button>
+                <button class="filter-btn" data-filter="garden">
+                    <span class="lang-fr">🏡 Jardin & Extérieur</span><span class="lang-en">🏡 Garden & Outdoors</span>
+                </button>
+                <button class="filter-btn" data-filter="help">
+                    <span class="lang-fr">👥 Aide & Accompagnement</span><span class="lang-en">👥 Assistance & Pets</span>
+                </button>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="services-grid">
+                
+                <!-- 1. Formations & Assistance Informatique -->
+                <div class="service-card" data-category="tech">
+                    <div class="service-img" style="background-image: url('assets/service_it.png');"></div>
+                    <div class="service-body">
+                        <div class="service-category-tag">IT & CAD</div>
+                        
+                        <h3 class="service-card-title lang-fr">Assistance Informatique & CAO</h3>
+                        <h3 class="service-card-title lang-en">IT Assistance & CAD</h3>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <strong class="lang-fr">Conception 3D (CATIA) :</strong>
+                                <strong class="lang-en">3D Design (CATIA):</strong>
+                                <span class="lang-fr">Cours particuliers et accompagnement à la modélisation (pièces, assemblages) pour étudiants, techniciens ou passionnés.</span>
+                                <span class="lang-en">Private tutoring and guidance in 3D modeling (parts, assemblies) for students, technicians, or hobbyists.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Création Web & Automatisations (n8n/Make) :</strong>
+                                <strong class="lang-en">Web Design & Automations (n8n/Make):</strong>
+                                <span class="lang-fr">Conception de sites internet vitrines modernes, création de landing pages et automatisation de processus professionnels.</span>
+                                <span class="lang-en">Design of modern showcase websites, landing pages, and business workflow automations.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Data Science, Analytics & ETL :</strong>
+                                <strong class="lang-en">Data Science, Analytics & ETL:</strong>
+                                <span class="lang-fr">Analyse de données complexes, modélisation Machine Learning, création de rapports d'activité/dashboards et pipelines d'intégration de données (ETL).</span>
+                                <span class="lang-en">Complex data analysis, Machine Learning modeling, dashboarding/reporting, and data integration pipelines (ETL).</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Assistance & Dépannage :</strong>
+                                <strong class="lang-en">Support & Troubleshooting:</strong>
+                                <span class="lang-fr">Prise en main ordinateur/tablette, installation logiciels, configuration box, démarches en ligne ou outils numériques.</span>
+                                <span class="lang-en">Computer/tablet setup, software installation, internet box configuration, online administrative support, or digital tools.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-card lang-fr" onclick="selectService('Assistance Informatique & CAO / IT & CAD Assistance')">Demander ce service</a>
+                        <a href="#contact" class="btn btn-card lang-en" onclick="selectService('Assistance Informatique & CAO / IT & CAD Assistance')">Request this service</a>
+                    </div>
+                </div>
+
+                <!-- 2. Petit Bricolage & Aménagement -->
+                <div class="service-card" data-category="diy">
+                    <div class="service-img" style="background-image: url('assets/service_diy.png');"></div>
+                    <div class="service-body">
+                        <div class="service-category-tag">DIY</div>
+                        
+                        <h3 class="service-card-title lang-fr">Petit Bricolage & Aménagement</h3>
+                        <h3 class="service-card-title lang-en">Small DIY & Fitting</h3>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <strong class="lang-fr">Montage de meubles :</strong>
+                                <strong class="lang-en">Furniture assembly:</strong>
+                                <span class="lang-fr">Assemblage impeccable de vos meubles en kit (Ikea, dressings, lits, étagères, etc.).</span>
+                                <span class="lang-en">Flawless assembly of flat-pack furniture (Ikea, closets, beds, shelves, etc.).</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Fixations & Pose :</strong>
+                                <strong class="lang-en">Fixings & Installations:</strong>
+                                <span class="lang-fr">Pose de tringles à rideaux, cadres, miroirs, supports TV muraux ou luminaires.</span>
+                                <span class="lang-en">Hanging curtain rods, frames, mirrors, TV wall mounts, or light fixtures.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Petites réparations :</strong>
+                                <strong class="lang-en">Small repairs:</strong>
+                                <span class="lang-fr">Changement d'ampoules, joints de robinet (fuites simples), cylindres de serrure.</span>
+                                <span class="lang-en">Replacing light bulbs, tap washers (simple leaks), lock cylinders.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Logistique :</strong>
+                                <strong class="lang-en">Logistics:</strong>
+                                <span class="lang-fr">Aide pour déplacer des meubles lourds ou préparer des cartons de déménagement.</span>
+                                <span class="lang-en">Help moving heavy furniture or preparing moving boxes.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-card lang-fr" onclick="selectService('Petit Bricolage & Aménagement / Small DIY')">Demander ce service</a>
+                        <a href="#contact" class="btn btn-card lang-en" onclick="selectService('Petit Bricolage & Aménagement / Small DIY')">Request this service</a>
+                    </div>
+                </div>
+
+                <!-- 3. Ménage & Entretien de la Maison -->
+                <div class="service-card" data-category="cleaning">
+                    <div class="service-img" style="background-image: url('assets/service_cleaning.png');"></div>
+                    <div class="service-body">
+                        <div class="service-category-tag">Home Care</div>
+                        
+                        <h3 class="service-card-title lang-fr">Ménage & Entretien</h3>
+                        <h3 class="service-card-title lang-en">Home Cleaning & Care</h3>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <strong class="lang-fr">Nettoyage & Ménage :</strong>
+                                <strong class="lang-en">Regular Cleaning:</strong>
+                                <span class="lang-fr">Entretien régulier ou ponctuel de vos pièces de vie pour un intérieur propre et frais.</span>
+                                <span class="lang-en">Regular or one-off maintenance of your living spaces for a clean interior.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Linge & Repassage :</strong>
+                                <strong class="lang-en">Laundry & Ironing:</strong>
+                                <span class="lang-fr">Soin et repassage de votre linge directement à votre domicile.</span>
+                                <span class="lang-en">Washing and ironing care for your linen directly at your home.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Vitres & Baies :</strong>
+                                <strong class="lang-en">Windows & Glass:</strong>
+                                <span class="lang-fr">Nettoyage de vitres et miroirs pour une luminosité optimale.</span>
+                                <span class="lang-en">Cleaning windows, glass surfaces, and mirrors for maximum light.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Détartrage & Appareils :</strong>
+                                <strong class="lang-en">Appliance maintenance:</strong>
+                                <span class="lang-fr">Nettoyage en profondeur des filtres de hotte, lave-linge et lave-vaisselle.</span>
+                                <span class="lang-en">Deep cleaning and descaling of filters, washing machines, and dishwashers.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-card lang-fr" onclick="selectService('Ménage & Entretien / Home Cleaning')">Demander ce service</a>
+                        <a href="#contact" class="btn btn-card lang-en" onclick="selectService('Ménage & Entretien / Home Cleaning')">Request this service</a>
+                    </div>
+                </div>
+
+                <!-- 4. Jardin, Extérieurs & Absences -->
+                <div class="service-card" data-category="garden">
+                    <div class="service-img" style="background-image: url('assets/service_gardening.png');"></div>
+                    <div class="service-body">
+                        <div class="service-category-tag">Outdoors</div>
+                        
+                        <h3 class="service-card-title lang-fr">Jardin & Extérieurs</h3>
+                        <h3 class="service-card-title lang-en">Garden & Outdoors</h3>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <strong class="lang-fr">Entretien de jardin :</strong>
+                                <strong class="lang-en">Garden care:</strong>
+                                <span class="lang-fr">Tonte de pelouse, taille de haies simples, ramassage des feuilles mortes.</span>
+                                <span class="lang-en">Mowing lawns, simple hedge trimming, and clearing dead leaves.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Terrasses & Allées :</strong>
+                                <strong class="lang-en">Terraces & Pathways:</strong>
+                                <span class="lang-fr">Nettoyage complet à la brosse de vos extérieurs, balcons et dalles.</span>
+                                <span class="lang-en">Thorough brush cleaning of balconies, terraces, and backyard pathways.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Vigilance Absence :</strong>
+                                <strong class="lang-en">Holiday Watch:</strong>
+                                <span class="lang-fr">Arrosage des plantes, relève du courrier et vérifications de sécurité durant vos vacances.</span>
+                                <span class="lang-en">Watering house plants, collecting mail, and checking home security during your holidays.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Désinfection & Poubelles :</strong>
+                                <strong class="lang-en">Trash Can Hygiene:</strong>
+                                <span class="lang-fr">Nettoyage et désinfection en profondeur de vos conteneurs extérieurs.</span>
+                                <span class="lang-en">Deep cleaning and sanitization of your outdoor bins.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-card lang-fr" onclick="selectService('Jardin & Extérieurs / Garden & Outdoors')">Demander ce service</a>
+                        <a href="#contact" class="btn btn-card lang-en" onclick="selectService('Jardin & Extérieurs / Garden & Outdoors')">Request this service</a>
+                    </div>
+                </div>
+
+                <!-- 5. Aide & Accompagnement -->
+                <div class="service-card" data-category="help">
+                    <div class="service-img" style="background-image: url('assets/service_petsitting.png');"></div>
+                    <div class="service-body">
+                        <div class="service-category-tag">Assistance</div>
+                        
+                        <h3 class="service-card-title lang-fr">Aide & Accompagnement</h3>
+                        <h3 class="service-card-title lang-en">Assistance & Support</h3>
+                        
+                        <ul class="service-list">
+                            <li>
+                                <strong class="lang-fr">Courses & Commissions :</strong>
+                                <strong class="lang-en">Errands & Delivery:</strong>
+                                <span class="lang-fr">Accompagnement ou réalisation de vos courses et récupération de colis.</span>
+                                <span class="lang-en">Accompanying you or running grocery runs, and picking up packages.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Soutien Scolaire :</strong>
+                                <strong class="lang-en">Academic Tutoring:</strong>
+                                <span class="lang-fr">Aide aux devoirs (mathématiques, sciences, initiation aux outils numériques) pour enfants.</span>
+                                <span class="lang-en">Homework support (mathematics, science, introduction to IT tools) for children.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-fr">Garde d'animaux (Pet-sitting) :</strong>
+                                <strong class="lang-en">Pet Sitting:</strong>
+                                <span class="lang-fr">Nourrissage, visites à domicile et promenades pour vos fidèles compagnons.</span>
+                                <span class="lang-en">Home visits, feeding, and daily walking for your beloved pets.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-card lang-fr" onclick="selectService('Aide & Accompagnement / Local Assistance')">Demander ce service</a>
+                        <a href="#contact" class="btn btn-card lang-en" onclick="selectService('Aide & Accompagnement / Local Assistance')">Request this service</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CESU Advantages & Calculator Section -->
+    <section id="cesu" class="section cesu-section bg-alt">
+        <div class="container">
+            <div class="cesu-card">
+                <div class="cesu-badge">50% de crédit d'impôt</div>
+                
+                <h2 class="cesu-title lang-fr">Un Système Simple, Légal et Avantageux : Le CESU</h2>
+                <h2 class="cesu-title lang-en">A Simple, Legal, and Smart System: CESU</h2>
+                
+                <p class="cesu-text lang-fr">Toutes mes prestations sont déclarées via le <strong>CESU (Urssaf)</strong>. Ce dispositif légal vous permet de déléguer en toute sérénité tout en faisant de réelles économies.</p>
+                <p class="cesu-text lang-en">All my services are declared through the <strong>CESU (Urssaf)</strong>. This legal framework lets you delegate your tasks with peace of mind while securing real savings.</p>
+                
+                <div class="grid grid-2 cesu-features">
+                    <div class="cesu-feature-item">
+                        <span class="feature-icon">💰</span>
+                        <div>
+                            <h4 class="lang-fr">50% de Réduction Immédiate</h4>
+                            <h4 class="lang-en">Immediate 50% Tax Credit</h4>
+                            <p class="lang-fr">Vous bénéficiez immédiatement de 50% de crédit d'impôt sur l'intégralité des montants facturés. C’est la garantie d'un tarif divisé par deux.</p>
+                            <p class="lang-en">You instantly benefit from a 50% tax credit on the entire invoiced amount. Your final cost is literally cut in half.</p>
+                        </div>
+                    </div>
+                    <div class="cesu-feature-item">
+                        <span class="feature-icon">🛡️</span>
+                        <div>
+                            <h4 class="lang-fr">Légalité & Assurance</h4>
+                            <h4 class="lang-en">100% Legal & Insured</h4>
+                            <p class="lang-fr">Prestations déclarées pour une tranquillité absolue : couverture assurance en cas d’accident et conformité administrative complète.</p>
+                            <p class="lang-en">Services are fully declared, granting you full coverage, legal compliance, and total administrative ease.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Savings Calculator -->
+                <div class="calculator-wrapper">
+                    <div class="calculator-container">
+                        <h3 class="calculator-title">
+                            <span class="lang-fr">🧮 Estimez vos coûts et économies</span>
+                            <span class="lang-en">🧮 Estimate your costs & savings</span>
+                        </h3>
+                        <div class="calculator-grid">
+                            <div class="calculator-inputs">
+                                <div class="calc-group">
+                                    <label class="calc-label">
+                                        <span class="lang-fr">Catégorie de Prestation :</span>
+                                        <span class="lang-en">Service Category:</span>
+                                    </label>
+                                    <div class="calc-radio-group">
+                                        <label class="calc-radio-label">
+                                            <input type="radio" name="calc-service" value="tech" checked onchange="calculateSavings()">
+                                            <span class="lang-fr">💻 Informatique/CATIA (30€/h)</span>
+                                            <span class="lang-en">💻 IT Support/CATIA (30€/h)</span>
+                                        </label>
+                                        <label class="calc-radio-label">
+                                            <input type="radio" name="calc-service" value="general" onchange="calculateSavings()">
+                                            <span class="lang-fr">🔧 Bricolage/Jardin/Ménage (24€/h)</span>
+                                            <span class="lang-en">🔧 DIY/Garden/Cleaning (24€/h)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="calc-group">
+                                    <label for="calc-hours" class="calc-label">
+                                        <span class="lang-fr">Heures prévues par mois :</span>
+                                        <span class="lang-en">Estimated hours per month:</span>
+                                        <span id="hours-display" class="hours-badge">10h</span>
+                                    </label>
+                                    <input type="range" id="calc-hours" min="2" max="40" value="10" class="calc-slider" oninput="calculateSavings()">
+                                </div>
+                            </div>
+                            
+                            <div class="calculator-outputs">
+                                <div class="output-row">
+                                    <span class="output-lbl lang-fr">Tarif horaire standard</span>
+                                    <span class="output-lbl lang-en">Standard hourly rate</span>
+                                    <span id="rate-standard" class="output-val">30€/h</span>
+                                </div>
+                                <div class="output-row">
+                                    <span class="output-lbl lang-fr">Tarif net (après 50% d'impôt)</span>
+                                    <span class="output-lbl lang-en">Net rate (after 50% credit)</span>
+                                    <span id="rate-net" class="output-val net-val">15€/h</span>
+                                </div>
+                                <div class="calc-divider"></div>
+                                <div class="output-row total-row">
+                                    <span class="output-lbl lang-fr">Votre coût mensuel réel</span>
+                                    <span class="output-lbl lang-en">Your real monthly cost</span>
+                                    <span id="cost-net" class="output-val total-val">150€</span>
+                                </div>
+                                <div class="savings-pill">
+                                    <span class="lang-fr">🔥 Économie mensuelle : <strong><span id="savings-amount">150</span>€</strong></span>
+                                    <span class="lang-en">🔥 Monthly savings: <strong><span id="savings-amount-en">150</span>€</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collapsible Detailed Pricing Grid Section -->
+                <div class="pricing-grid-toggle">
+                    <button class="btn btn-outline-light btn-block" onclick="togglePricingGrid()">
+                        <span class="btn-icon">📋</span>
+                        <span class="lang-fr">Consulter la grille tarifaire complète par service</span>
+                        <span class="lang-en">Consult the complete price list by service</span>
+                    </button>
+                </div>
+
+                <div id="pricing-grid-details" class="pricing-grid-details">
+                    <div class="pricing-grid-inner">
+                        
+                        <!-- 1. Informatique & CAO -->
+                        <div class="price-cat-card">
+                            <h4 class="price-cat-title">💻 Informatique & CAO (Tech & Training)</h4>
+                            <div class="price-list-rows">
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Création de Sites Web (Showcase / Vitrine)</span>
+                                        <span class="lang-en">Website Design & Development</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">35 - 55€/h</span>
+                                        <span class="p-cesu">CESU : 17.5 - 27.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Automatisation de processus (n8n, Make)</span>
+                                        <span class="lang-en">Workflow Automation (n8n, Make)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">35 - 55€/h</span>
+                                        <span class="p-cesu">CESU : 17.5 - 27.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Data Science, Analytics & Pipelines ETL</span>
+                                        <span class="lang-en">Data Science, Analytics & ETL Pipelines</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">50 - 80€/h</span>
+                                        <span class="p-cesu">CESU : 25 - 40€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Cours CAO CATIA (Modélisation 3D)</span>
+                                        <span class="lang-en">CATIA 3D Design Tutoring</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">30 - 45€/h</span>
+                                        <span class="p-cesu">CESU : 15 - 22.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Dépannage PC & Réglage Box Internet</span>
+                                        <span class="lang-en">PC Assistance & Internet Box Setup</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">25 - 35€/h</span>
+                                        <span class="p-cesu">CESU : 12.5 - 17.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Assistance démarches administratives</span>
+                                        <span class="lang-en">Online Administrative Support</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">20 - 30€/h</span>
+                                        <span class="p-cesu">CESU : 10 - 15€/h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Petit Bricolage -->
+                        <div class="price-cat-card">
+                            <h4 class="price-cat-title">🔧 Petit Bricolage & Logistique (DIY)</h4>
+                            <div class="price-list-rows">
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Montage de meubles en kit (Ikea, etc.)</span>
+                                        <span class="lang-en">Flat-pack furniture assembly</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">20 - 30€/h <small>(ou Forfait 40-80€)</small></span>
+                                        <span class="p-cesu">CESU : 10 - 15€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Pose luminaires / tringles / miroirs</span>
+                                        <span class="lang-en">Hanging lights, curtain rods, mirrors</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">20 - 35€ / pose</span>
+                                        <span class="p-cesu">CESU : 10 - 17.5€ / pose</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Changement cylindre serrure</span>
+                                        <span class="lang-en">Lock cylinder replacement</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">30 - 40€ forfait</span>
+                                        <span class="p-cesu">CESU : 15 - 20€ forfait</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Petits dépannages de plomberie (joints...)</span>
+                                        <span class="lang-en">Small plumbing repairs (washers, leaks)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">25 - 35€ forfait</span>
+                                        <span class="p-cesu">CESU : 12.5 - 17.5€ forfait</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Aide logistique & préparation cartons</span>
+                                        <span class="lang-en">Moving support & boxes prep</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">18 - 25€/h</span>
+                                        <span class="p-cesu">CESU : 9 - 12.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Entretien divers (charnières, enlever colle)</span>
+                                        <span class="lang-en">Minor maintenance (hinges, glue removal)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 22€/h</span>
+                                        <span class="p-cesu">CESU : 7.5 - 11€/h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Ménage -->
+                        <div class="price-cat-card">
+                            <h4 class="price-cat-title">🧽 Ménage & Entretien de la Maison</h4>
+                            <div class="price-list-rows">
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Nettoyage régulier & entretien pièces</span>
+                                        <span class="lang-en">Regular cleaning of living spaces</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 17€/h</span>
+                                        <span class="p-cesu">CESU : 7.5 - 8.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Soin du linge & repassage à domicile</span>
+                                        <span class="lang-en">Ironing & laundry care at home</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 18€/h</span>
+                                        <span class="p-cesu">CESU : 7.5 - 9€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Lavage de vitres et miroirs</span>
+                                        <span class="lang-en">Window & mirror washing</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">17 - 22€/h</span>
+                                        <span class="p-cesu">CESU : 8.5 - 11€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Grand nettoyage d'appareils & détartrage</span>
+                                        <span class="lang-en">Deep appliance cleaning & descaling</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">16 - 20€/h</span>
+                                        <span class="p-cesu">CESU : 8 - 10€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Nettoyage walls (traces, crayons)</span>
+                                        <span class="lang-en">Wall scrubbing (spots, pencil marks)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 18€/h</span>
+                                        <span class="p-cesu">CESU : 7.5 - 9€/h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Jardin & Extérieurs -->
+                        <div class="price-cat-card">
+                            <h4 class="price-cat-title">🏡 Jardin, Extérieurs & Absences</h4>
+                            <div class="price-list-rows">
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Tonte de pelouse & finitions bordures</span>
+                                        <span class="lang-en">Lawn mowing & edge trimming</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">20 - 28€/h <small>(ou Forfait 30-60€)</small></span>
+                                        <span class="p-cesu">CESU : 10 - 14€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Taille de haies simples et buissons</span>
+                                        <span class="lang-en">Trimming simple hedges & bushes</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">22 - 30€/h</span>
+                                        <span class="p-cesu">CESU : 11 - 15€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Nettoyage terrasse/balcon & désinfection poubelles</span>
+                                        <span class="lang-en">Balcony washing & bin disinfection</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">18 - 25€/h</span>
+                                        <span class="p-cesu">CESU : 9 - 12.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Vigilance vacances (plantes, courrier)</span>
+                                        <span class="lang-en">Holiday watch (plants watering, mail)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 20€ / visite</span>
+                                        <span class="p-cesu">CESU : 7.5 - 10€ / visite</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Aide Locale -->
+                        <div class="price-cat-card">
+                            <h4 class="price-cat-title">👥 Aide & Accompagnement Local</h4>
+                            <div class="price-list-rows">
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Courses quotidiennes & commissions</span>
+                                        <span class="lang-en">Grocery runs & local errands</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">15 - 18€/h</span>
+                                        <span class="p-cesu">CESU : 7.5 - 9€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Soutien scolaire & aide aux devoirs</span>
+                                        <span class="lang-en">School homework support & tutoring</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">18 - 25€/h</span>
+                                        <span class="p-cesu">CESU : 9 - 12.5€/h</span>
+                                    </div>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-name">
+                                        <span class="lang-fr">Pet-sitting (garde d'animaux, promenades)</span>
+                                        <span class="lang-en">Pet-sitting (home care, dog walking)</span>
+                                    </div>
+                                    <div class="price-vals">
+                                        <span class="p-std">12 - 15€/h <small>(ou Forfait 15-25€/j)</small></span>
+                                        <span class="p-cesu">CESU : 6 - 7.5€/h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="cesu-action">
+                    <a href="https://www.cesu.urssaf.fr/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light lang-fr">En savoir plus sur le site CESU Urssaf</a>
+                    <a href="https://www.cesu.urssaf.fr/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light lang-en">Learn more on the official CESU website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zone d'intervention Section -->
+    <section id="area" class="section area-section">
+        <div class="container">
+            <div class="grid grid-2 align-center">
+                <div class="area-content">
+                    <div class="section-badge lang-fr">Proximité</div>
+                    <div class="section-badge lang-en">Proximity</div>
+                    
+                    <h2 class="section-title lang-fr">Zone d'intervention locale</h2>
+                    <h2 class="section-title lang-en">Local Intervention Area</h2>
+                    
+                    <p class="section-text lang-fr">Afin de maintenir une grande réactivité et de limiter les frais de déplacement, je propose mes services principalement dans les villes de :</p>
+                    <p class="section-text lang-en">To maintain quick response times and eliminate heavy travel expenses, I prioritize services in the towns of:</p>
+                    
+                    <ul class="area-towns">
+                        <li><strong>Arpajon</strong> (91290)</li>
+                        <li><strong>Saint-Germain-lès-Arpajon</strong> (91180)</li>
+                        <li><strong>La Norville</strong> (91290)</li>
+                        <li><strong>Égly</strong> (91520)</li>
+                        <li><strong>Brétigny-sur-Orge</strong> (91220)</li>
+                        <li><strong>Avrainville</strong> (91630)</li>
+                        <li><strong>Ollainville</strong> (91340)</li>
+                        <li><span class="lang-fr">Communes limitrophes</span><span class="lang-en">Surrounding municipalities</span></li>
+                    </ul>
+                </div>
+                
+                <div class="area-visual">
+                    <div class="map-card">
+                        <div class="map-circle pulse-1"></div>
+                        <div class="map-circle pulse-2"></div>
+                        <div class="map-center-dot">
+                            <span class="map-pin-icon">📍</span>
+                        </div>
+                        <div class="map-labels">
+                            <span class="label-town tag-arpajon">Arpajon</span>
+                            <span class="label-town tag-stg">St-Germain-lès-Arpajon</span>
+                            <span class="label-town tag-norville">La Norville</span>
+                            <span class="label-town tag-egly">Égly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Form Section -->
+    <section id="contact" class="section contact-section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge lang-fr">Contact</div>
+                <div class="section-badge lang-en">Contact</div>
+                
+                <h2 class="section-title lang-fr">Besoin d'un devis ou d'une question ?</h2>
+                <h2 class="section-title lang-en">Need a Quote or Have a Question?</h2>
+                
+                <p class="section-subtitle lang-fr">Remplissez le formulaire ci-dessous pour m'envoyer un message direct ou m'appeler directement.</p>
+                <p class="section-subtitle lang-en">Fill out the form below to message me directly, or call me directly.</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <!-- Contact Info Panel -->
+                <div class="contact-info">
+                    <h3 class="contact-info-title lang-fr">Mes coordonnées directes</h3>
+                    <h3 class="contact-info-title lang-en">Direct contact info</h3>
+                    
+                    <p class="lang-fr">N'hésitez pas à me joindre directement pour m'expliquer vos besoins. Vous pouvez également scanner les QR codes ci-dessous pour lancer une discussion instantanée !</p>
+                    <p class="lang-en">Feel free to reach out directly to explain your needs. You can also scan the QR codes below to start an instant chat!</p>
+                    
+                    <div class="contact-methods">
+                        <!-- Direct Phone Call -->
+                        <a href="tel:+33660681400" class="contact-method-card">
+                            <svg class="method-svg phone-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <div>
+                                <h5 class="lang-fr">Téléphone direct</h5>
+                                <h5 class="lang-en">Direct Phone Call</h5>
+                                <p>06 60 68 14 00</p>
+                            </div>
+                        </a>
+                        
+                        <!-- WhatsApp Chat -->
+                        <a href="https://wa.me/33660681400" target="_blank" rel="noopener noreferrer" class="contact-method-card whatsapp-card">
+                            <svg class="method-svg whatsapp-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <div>
+                                <h5>WhatsApp Messenger</h5>
+                                <p class="lang-fr">Discuter sur WhatsApp</p>
+                                <p class="lang-en">Chat on WhatsApp</p>
+                            </div>
+                        </a>
+
+                        <!-- Telegram Chat -->
+                        <a href="https://t.me/POURIA_FOROUZESH" target="_blank" rel="noopener noreferrer" class="contact-method-card telegram-card">
+                            <svg class="method-svg telegram-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.962-.924c-.643-.204-.658-.643.136-.953l11.57-4.458c.537-.204 1.006.12 1.006.924z"/>
+                            </svg>
+                            <div>
+                                <h5>Telegram Messenger</h5>
+                                <p class="lang-fr">Discuter sur Telegram</p>
+                                <p class="lang-en">Chat on Telegram</p>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn Connect -->
+                        <a href="https://www.linkedin.com/in/pouria-forouzesh/" target="_blank" rel="noopener noreferrer" class="contact-method-card linkedin-card">
+                            <svg class="method-svg linkedin-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7h-3.56V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/>
+                            </svg>
+                            <div>
+                                <h5>LinkedIn Profile</h5>
+                                <p class="lang-fr">Me rejoindre sur LinkedIn</p>
+                                <p class="lang-en">Connect on LinkedIn</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Interactive QR Code Panel -->
+                    <div class="qr-panel">
+                        <h4 class="qr-panel-title">
+                            <span class="lang-fr">📸 Scannez pour discuter</span>
+                            <span class="lang-en">📸 Scan to Chat</span>
+                        </h4>
+                        <div class="qr-grid">
+                            <a href="https://wa.me/33660681400" target="_blank" rel="noopener noreferrer" class="qr-item-wrapper" title="WhatsApp QR Code">
+                                <img src="assets/qr_whatsapp.png" alt="WhatsApp QR Code" class="qr-img-file">
+                                <span class="qr-caption">WhatsApp</span>
+                            </a>
+                            <a href="https://t.me/POURIA_FOROUZESH" target="_blank" rel="noopener noreferrer" class="qr-item-wrapper" title="Telegram QR Code">
+                                <img src="assets/qr_telegram.png" alt="Telegram QR Code" class="qr-img-file">
+                                <span class="qr-caption">Telegram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-availability">
+                        <span class="availability-dot"></span>
+                        <span class="lang-fr">Disponible du Lundi au Samedi, 8h - 20h</span>
+                        <span class="lang-en">Available Monday to Saturday, 8am - 8pm</span>
+                    </div>
+                </div>
+                
+                <!-- Interactive Quote Form -->
+                <div class="contact-form-wrapper">
+                    <form id="quote-form" onsubmit="sendWhatsAppMessage(event)">
+                        <div class="form-group">
+                            <label for="form-name" class="lang-fr">Votre nom complet</label>
+                            <label for="form-name" class="lang-en">Your full name</label>
+                            <input type="text" id="form-name" placeholder="Ex: Jean Dupont" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-service" class="lang-fr">Service souhaité</label>
+                            <label for="form-service" class="lang-en">Service requested</label>
+                            <select id="form-service" required>
+                                <option value="" disabled selected class="lang-fr">Sélectionnez une catégorie...</option>
+                                <option value="" disabled selected class="lang-en">Select a category...</option>
+                                <option value="Assistance Informatique & CAO / IT & CAD Assistance">Assistance Informatique & CAO</option>
+                                <option value="Petit Bricolage & Aménagement / Small DIY">Petit Bricolage & Aménagement</option>
+                                <option value="Ménage & Entretien / Home Cleaning">Ménage & Entretien de la Maison</option>
+                                <option value="Jardin & Extérieurs / Garden & Outdoors">Jardin & Extérieurs</option>
+                                <option value="Aide & Accompagnement / Local Assistance">Aide & Accompagnement</option>
+                                <option value="Autre demande / Other Inquiry">Autre besoin</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-message" class="lang-fr">Description de votre besoin</label>
+                            <label for="form-message" class="lang-en">Description of your need</label>
+                            <textarea id="form-message" rows="4" placeholder="Ex: Montage d'une armoire Ikea 3 portes, disponible samedi matin..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="btn-icon">💬</span>
+                            <span class="lang-fr">Envoyer ma demande sur WhatsApp</span>
+                            <span class="lang-en">Send my request via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Pouria Forouzesh</h2>
+                    <p class="lang-fr">Votre voisin ingénieur pour un quotidien serein et organisé.</p>
+                    <p class="lang-en">Your engineer neighbor for a calm and organized daily life.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about" class="lang-fr">Qui suis-je ?</a>
+                    <a href="#about" class="lang-en">About Me</a>
+                    
+                    <a href="#services" class="lang-fr">Mes Prestations</a>
+                    <a href="#services" class="lang-en">My Services</a>
+                    
+                    <a href="#cesu" class="lang-fr">Le Système CESU</a>
+                    <a href="#cesu" class="lang-en">The CESU System</a>
+                    
+                    <a href="flyer.html" target="_blank" class="lang-fr">🖨️ Version Flyer A5 (Imprimer)</a>
+                    <a href="flyer.html" target="_blank" class="lang-en">🖨️ A5 Flyer Version (Print)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pouria Forouzesh. Tous droits réservés / All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    <span class="lang-fr">Site déclaré et conforme à la charte des services à la personne. Activité sous régime CESU Urssaf.</span>
+                    <span class="lang-en">Site registered and compliant with home service regulations. Operations under the CESU Urssaf scheme.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript logic -->
+    <script src="script.js"></script>
+</body>
+</html>
